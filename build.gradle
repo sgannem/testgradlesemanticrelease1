@@ -37,19 +37,7 @@ jar {
         ])
     }
 }
-release {
-    // add a second strategy to create release candidates from 'rc/.*' branches
-    versionStrategy semanticRelease.releaseStrategy.copyWith(
-            // the type is important, without type you would again replace the default strategy
-            type: 'rc',
-            selector: { SemVerStrategyState state ->
-                !state.repoDirty && state.currentBranch.name ==~ /rc\/.*/ &&
-                        semanticRelease.semanticStrategy.canRelease(state) && project.gradle.startParameter.taskNames.find { it == 'release' }
-            },
-            preReleaseStrategy: StrategyUtil.all({ it.copyWith(inferredPreRelease: 'rc') } as PartialSemVerStrategy, Strategies.PreRelease.COUNT_INCREMENTED)
-    )
 
-}
 
 semanticRelease {
     repo {
