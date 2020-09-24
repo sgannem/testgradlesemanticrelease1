@@ -59,3 +59,4 @@ semanticRelease {
         releaseAsset javadocJar, label: 'the javadoc of the project', contentType: 'application/zip'
     }
 }
+
