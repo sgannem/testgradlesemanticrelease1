@@ -3,7 +3,7 @@ import org.ajoberstar.gradle.git.release.opinion.Strategies
 
 plugins {
     id 'java'
-    id 'de.gliderpilot.semantic-release' version '1.2.0'
+    id 'de.gliderpilot.semantic-release' version '1.4.0'
     id 'maven'
     id 'application'
 }
